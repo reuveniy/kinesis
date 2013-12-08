@@ -1,4 +1,4 @@
-var utils = require('utils'),
+var util = require('util'),
     stream = require('stream'),
     http = require('http'),
     https = require('https'),
@@ -34,7 +34,7 @@ function createWriteStream(name, options) {
 }
 
 
-utils.inherits(KinesisReadStream, stream.Readable)
+util.inherits(KinesisReadStream, stream.Readable)
 
 function KinesisReadStream(name, options) {
   stream.Readable.call(this, options)
@@ -101,7 +101,7 @@ KinesisReadStream.prototype.getNextRecords = function(data, cb) {
 }
 
 
-utils.inherits(KinesisWriteStream, stream.Writable)
+util.inherits(KinesisWriteStream, stream.Writable)
 
 function KinesisWriteStream(name, options) {
   stream.Writable.call(this, options)
